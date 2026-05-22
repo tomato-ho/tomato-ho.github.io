@@ -1,3 +1,8 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = 'https://tomato-ho.github.io/'
+locale = 'zh-cn'
+title = 'Person Porfile'
+theme = 'papermod'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
