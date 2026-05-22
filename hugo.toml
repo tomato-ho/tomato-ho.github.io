@@ -1,8 +1,36 @@
 baseURL = 'https://tomato-ho.github.io/'
-locale = 'zh-cn'
+languageCode = 'zh-cn'
 title = '散漫成长技'
 theme = 'papermod'
 
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[params]
+  homeInfoParams = {Title = "👋 你好，我是散漫成长技的作者", Content = "高级运维工程师，专注于大数据、数据工程与 AI 工程化落地。"}
+  showReadingTime = true
+  showShareButtons = false
+  showPostNavLinks = true
+  showBreadCrumbs = true
+  showCodeCopyButtons = true
+
+[[menu.main]]
+  name = "文章"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  name = "分类"
+  url = "/categories/"
+  weight = 20
+
+[[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  name = "关于我"
+  url = "/about/"
+  weight = 40
