@@ -29,7 +29,7 @@ GitHub Pages
 
 [Hugo](https://github.com/gohugoio/hugo)
 
-​	基于Go 语言开发的高性能、现代静态网站生成器。github 88K start。 使用markdown 写内容，自动生成相应的主题页面。
+​	基于Go 语言开发的高性能、现代静态网站生成器。github 88K star。 使用markdown 写内容，自动生成相应的主题页面。
 
 ## 环境准备
 

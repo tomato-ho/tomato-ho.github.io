@@ -1,6 +1,6 @@
 baseURL = 'https://tomato-ho.github.io/'
 locale = 'zh-cn'
-title = 'Person Porfile'
+title = '散漫成长技'
 theme = 'papermod'
 
 [caches]
