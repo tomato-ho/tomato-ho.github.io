@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>GitHub Pages &#43; Hugo 搭建个人技术博客 | Person Porfile</title>
+<meta name="keywords" content="Hugo, GitHub, 博客搭建">
+<meta name="description" content="从零开始，使用 Hugo 生成静态网站并部署到 GitHub Pages，实现 git push 自动发布。">
+<meta name="author" content="">
+<link rel="canonical" href="http://192.168.152.129:1313/posts/hugo-github-pages-setup/hugo-github-pages-setup/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://192.168.152.129:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://192.168.152.129:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://192.168.152.129:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://192.168.152.129:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://192.168.152.129:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://192.168.152.129:1313/posts/hugo-github-pages-setup/hugo-github-pages-setup/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://192.168.152.129:1313/" accesskey="h" title="Person Porfile (Alt + H)">Person Porfile</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      GitHub Pages &#43; Hugo 搭建个人技术博客
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-05-22 00:00:00 +0000 UTC'>May 22, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
+<p>探索使用GitHub Pages 结合 Hugo 搭建博客环境。</p>
+<p>对比博客园/CSDN</p>
+<ol>
+<li>主要是不想在博客园或CSDN 上折腾，毕竟现在都是AI 时代，博客看的人已经很少了;</li>
+<li>和个人github 分离，两边关联需要人为在博客中注明；</li>
+</ol>
+<p>对比自己开发</p>
+<ol>
+<li>要花费时间开发相应功能，当前没必要</li>
+<li>开发出来的服务需要服务器运行，再折腾服务器当前也没必要</li>
+</ol>
+<p>GitHub Pages</p>
+<ol>
+<li>直接使用个人github 账号</li>
+<li>提交代码自动部署</li>
+<li>免费，快速上手</li>
+</ol>
+<p><a href="https://github.com/gohugoio/hugo">Hugo</a></p>
+<p>​	基于Go 语言开发的高性能、现代静态网站生成器。github 88K start。 使用markdown 写内容，自动生成相应的主题页面。</p>
+<h2 id="环境准备">环境准备<a hidden class="anchor" aria-hidden="true" href="#环境准备">#</a></h2>
+<ol>
+<li>Git</li>
+<li>GitHub</li>
+<li>Hugo</li>
+</ol>
+<h2 id="整体流程">整体流程<a hidden class="anchor" aria-hidden="true" href="#整体流程">#</a></h2>
+<p>从Hugo 文档中看大体流程，<a href="https://gohugo.io/host-and-deploy/host-on-github-pages/">host on GitHub Pages</a></p>
+<p>因为只是从hugo 文档上看有可能找不到相关的功能在哪里，还是建议github 的文档 + hugo 的文档结合一起看，我把自己操作的大体步骤总结如下，可以给部分参考。</p>
+<h3 id="github-配置">GitHub 配置<a hidden class="anchor" aria-hidden="true" href="#github-配置">#</a></h3>
+<p><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">官方文档</a></p>
+<ol>
+<li>在github 中创建一个仓库，仓库必须为public 类型，如果不是public ，后续步骤配置部署时将看不到相关功能。</li>
+<li>仓库的名称必须为： &lt;user&gt;.github.io 或&lt;organization&gt;.github.io</li>
+<li>选择如何部署网站: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">官方文档</a></li>
+<li>按文档中照片操作即可，setting-&gt;pages-&gt;build and deployment-&gt;branch ，选择main 分支，点击save即可</li>
+<li>再次点击build and deployment-&gt; 选择 GitHub Actions</li>
+</ol>
+<h3 id="本地git-仓库">本地git 仓库<a hidden class="anchor" aria-hidden="true" href="#本地git-仓库">#</a></h3>
+<ol>
+<li>提前安装好git</li>
+<li>选择一个目录</li>
+</ol>
+<h3 id="hugo">Hugo<a hidden class="anchor" aria-hidden="true" href="#hugo">#</a></h3>
+<ol>
+<li>提前安装好hugo,<a href="https://github.com/gohugoio/hugo/releases">下载地址</a></li>
+<li>查看<a href="https://gohugo.io/getting-started/quick-start/">快速启动文档</a></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 这里最好要在上一步git 仓库中选择的目录,两边的步骤能对应上</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建新网站</span>
+</span></span><span style="display:flex;"><span>hugo new project quickstart <span style="color:#75715e"># 注意这里的项目名称要和Github 上的项目名称一致</span>
+</span></span><span style="display:flex;"><span>cd quickstart
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 仓库初始化</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加网站主题</span>
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/adityatelange/hugo-PaperMod themes/papermod
+</span></span></code></pre></div><ol start="3">
+<li>执行 host on github pages 第二步，修改hugo.toml ,使用主题，以及修改缓存</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># 这个最好是github pages 的网站名称一致</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#39;https://tomato-ho.github.io/&#39;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">locale</span> = <span style="color:#e6db74">&#39;zh-cn&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#39;Person Porfile&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#39;papermod&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">caches</span>]
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">caches</span>.<span style="color:#a6e22e">images</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">dir</span> = <span style="color:#e6db74">&#39;:cacheDir/images&#39;</span>
+</span></span></code></pre></div><ol start="4">
+<li>github pages 网站地址: setting-&gt;pages 页面第一行即可看到</li>
+<li>在项目目录中创建github actions 相关配置，执行 host on github pages 第三步、第四步，配置过长，本文 不记录，直接复制粘贴即可</li>
+<li>将本地仓库与远程仓库关联</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git remote add origin xxx <span style="color:#75715e"># 这里最好是使用SSH 方式</span>
+</span></span><span style="display:flex;"><span>git fetch origin/main <span style="color:#75715e"># 拉取远程仓库最新提交</span>
+</span></span><span style="display:flex;"><span>git merge origin/main --allow-unrelated-histories <span style="color:#75715e"># 合并远程仓库到本地</span>
+</span></span></code></pre></div><ol start="7">
+<li>回到hugo 的快速启动文档,添加新的页面后，提交git 并推送到远程即可看到github actions 有执行新的任务，任务通过后，刷新网站即可完成页面更新</li>
+</ol>
+<h2 id="后续">后续<a hidden class="anchor" aria-hidden="true" href="#后续">#</a></h2>
+<ol>
+<li>添加新的网站内容。</li>
+<li>提交git, 推送到github 即可完成网站更新。</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://192.168.152.129:1313/tags/hugo/">Hugo</a></li>
+      <li><a href="http://192.168.152.129:1313/tags/github/">GitHub</a></li>
+      <li><a href="http://192.168.152.129:1313/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://192.168.152.129:1313/">Person Porfile</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

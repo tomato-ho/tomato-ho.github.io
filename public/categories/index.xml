@@ -2,10 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Person Porfile</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>http://192.168.152.129:1313/categories/</link>
     <description>Recent content in Categories on Person Porfile</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://192.168.152.129:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>运维</title>
+      <link>http://192.168.152.129:1313/categories/%E8%BF%90%E7%BB%B4/</link>
+      <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://192.168.152.129:1313/categories/%E8%BF%90%E7%BB%B4/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
